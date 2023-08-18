@@ -45,6 +45,41 @@ const shadowHeader = () => {
 window.addEventListener("scroll", shadowHeader);
 
 /* =============== EMAIL JS =============== */
+const contactForm = document.getElementById("contact-form"),
+  contactMessage = document.getElementById("contact-message");
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  // ServiceID - TemplateID - #formID - PublicKey
+  emailjs
+    .sendForm(
+      "service_vjk26hb",
+      "template_09bnjqo",
+      "#contact-form",
+      "Y1OK4YEBcsENY0bod"
+    )
+    .then(
+      () => {
+        // Show Message Sent
+        contactMessage.textContent = "Message sent successfully ✅";
+
+        // Remove Message After Five Seconds
+        setTimeout(() => {
+          contactMessage.textContent = "";
+        }, 5000);
+
+        // Clear Input Fields
+        contactForm.reset();
+      },
+      () => {
+        // Show Error Message
+        contactMessage.textContent = "Message not sent (service error) ❌";
+      }
+    );
+};
+
+contactForm.addEventListener("submit", sendEmail);
 
 /* =============== SHOW SCROLL UP =============== */
 
