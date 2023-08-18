@@ -82,6 +82,17 @@ const sendEmail = (e) => {
 contactForm.addEventListener("submit", sendEmail);
 
 /* =============== SHOW SCROLL UP =============== */
+const scrollUp = () => {
+  const scrollUp = document.getElementById("scroll-up");
+
+  // When The Scroll Is Higher Than 350 ViewPort Height,
+  // Add The scroll___up Class
+  this.scrollY >= 350
+    ? scrollUp.classList.add("scroll___up")
+    : scrollUp.classList.remove("scroll___up");
+};
+
+window.addEventListener("scroll", scrollUp);
 
 /* =============== SCROLL SECTIONS ACTIVE LINK =============== */
 

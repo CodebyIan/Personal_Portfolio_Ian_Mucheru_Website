@@ -1045,8 +1045,29 @@ img {
 }
 
 /*=============== SCROLL UP ===============*/
+.scroll__up {
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--first-color);
+  /* border: 1px solid var(--first-color); */
+  display: inline-flex;
+  padding: 8px;
+  font-size: 1.25rem;
+  font-weight: var(--font-bold);
+  color: var(--white-color);
+  z-index: var(--z-tooltip);
+  transition: bottom 0.4s, transform 0.4s, background-color 0.4s;
+}
+
+.scroll__up:hover {
+  transform: translateY(-0.5rem);
+}
 
 /* Show Scroll Up */
+.scroll___up {
+  bottom: 3rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
