@@ -160,3 +160,18 @@ themeButton.addEventListener("click", () => {
 });
 
 /* =============== SCROLL REVEAL ANIMATION =============== */
+const sr = ScrollReveal({
+  origin: "top",
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+  // reset: true // Animation Repeat
+});
+
+sr.reveal(`.home__ian, .about__ian, .contact__mail`, { origin: "right" });
+sr.reveal(
+  `.section__title-1, .home__name, .home__info, .about__container, .about__info,
+   .contact__social, .contact__data`,
+  { origin: "left" }
+);
+sr.reveal(`.services__card, .projects__card`, { interval: 100 });
